@@ -1,0 +1,124 @@
+* {
+  margin: 0
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #fffff8;
+  color: #112;
+  font-size: 15px;
+  background-color: black;
+  color: #e9bd6c;
+
+}
+
+@media (max-width: 786px) {
+  html {
+    font-size: 12px
+  }
+}
+
+.main-theme {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  
+  
+}
+
+.main-theme-td {
+  vertical-align: middle;text-align: center;font-size: 197px;
+}
+
+@media (max-width: 786px) {
+  .main-theme-td {
+    vertical-align: middle;text-align: center;font-size: 47px;
+  }
+}
+
+.movie-link {
+    display: none;
+  }
+
+@media (max-width: 786px) {
+  .movie-link {
+    display: block;
+  }
+}
+
+
+.movie-moment {
+  
+}
+
+.pic-date {
+  font-size: 70px;
+  position: relative;
+
+}
+
+@media (max-width: 786px) {
+  .pic-date {
+    font-size: 37px;
+    position: relative;
+  }
+  .svg-size {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.pic-nav {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+}
+
+.pic {
+  
+  
+  
+  
+  
+  
+}
+
+.pic2 {
+  background: url(../pic/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 75%;
+  margin-bottom: 10px;
+  box-shadow: 0 0 16px rgb(233 189 108 / 15%);
+}
+
+.pic3 {
+  background: url(../pic/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 46.182%;
+  margin-bottom: 10px;
+  box-shadow: 0 0 16px rgb(233 189 108 / 15%);
+}
+
+.movie-wrapper {
+  margin-bottom: 40px;
+}
+
+.movie-year {
+  font-size: 37px;
+  margin-bottom: 10px;
+}
+
+.movie-li {
+  background-color: black;padding: .5rem 0rem;
+}
+
+
