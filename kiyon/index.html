@@ -4,160 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kiyon</title>
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/et-book.css" rel="stylesheet">
-    <link href="../assets/css/index-page-base.css" rel="stylesheet">
-    <style>
-      
-
-      
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url(47.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     </style>
-
-    
   </head>
   <body>
-
-    <div class="main-theme">
-      <table border="0px" style="height: 100%;width: 100%;">
-        <tr>
-          <td class="main-theme-td">
-            <i>Always</i>
-            <svg class="bi bi-chevron-right main-theme-button" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="container" style="display: none;">
-
-      
-
-      <!-- movie -->
-
-      
-
-
-      <!-- about -->
-      
-      
-
-    </div>
-
-    
-    
-
-
-    
-
-
-    
-
-
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
-    <script src="../assets/js/picInfos.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
-      $(function(){
-        $(".main-theme-button").click(function(){
-          $(".main-theme").fadeOut();
-          $(".container").show();
-          $(".sky-pic").hide();
-          $(".sky-pic").first().show();
-        });
-
-        $(".container").delegate(".nav-left", "click", function(){
-          var id = $(this).parents(".sky-pic").attr("id");
-          if (id === "pic0") return;
-
-          var index = id.substring(3);
-          index--;
-          var prevId = "pic" + index;
-          $("#" + id).hide();
-          $("#" + prevId).show();
-        });
-
-        $(".container").delegate(".nav-right", "click", function(){
-          var id = $(this).parents(".sky-pic").attr("id");
-          var lastId = "pic" + (picInfos.length - 1);
-          if (id === lastId) return;
-
-          var index = id.substring(3);
-          index++;
-          var nextId = "pic" + index;
-          $("#" + id).hide();
-          //$("#" + id).animate({width:'toggle'},350);
-          $("#" + nextId).show();
-        });
-
-        $(".container").delegate(".movie-link", "click", function(){
-          window.open("movie.html");
-        });
-
-        $(".container").delegate(".about-link", "click", function(){
-          window.open("about.html");
-        });
-        
-
-        
-
-        
-
-        console.log(picInfos)
-
-        for (var i = 0; i < picInfos.length; i++) {
-          var picInfo = picInfos[i];
-
-          var scale = picInfo.scale == 1 ? "75%" : "46.182%";
-          var picDivs = [];
-          picInfo.pics.forEach(pic => {
-            picDivs.push(`
-              <div class="pic" style="padding-bottom: ${scale};background: url(../assets/pic/${pic}.JPG);background-repeat: no-repeat;background-size: cover;margin-bottom: 10px;box-shadow: 0 0 16px rgb(233 189 108 / 15%);"></div>
-            `);
-          });
-
-          var leftDisable = i == 0 ? "color: grey;" : "";
-          var rightDisable = i == picInfos.length - 1 ? "color: grey;" : "";
-
-          $(".container").append(`
-            <div id="pic${i}" class="sky-pic" style="margin-top: 100px;">
-              <div class="pic-date">
-                <i>${picInfo.pdate}</i>
-                <div class="pic-nav">
-                  <svg style="margin-right: 20px;${leftDisable}" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-left svg-size nav-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                  </svg>
-                  <svg style="${rightDisable}" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right svg-size nav-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                </div>
-              </div>
-
-              <div style="margin-bottom: 20px;">
-                ${picInfo.desc}
-              </div>
-
-              ${picDivs.join("")}
-              
-            </div>
-          `);
-        }
-
-
-
-        
-        $(".container").append(`
-          <div style="height: 40px;"></div>
-          <div>
-            <div class="movie-link" style="float: left;margin-right: 20px;clear: right;text-decoration: underline;cursor: pointer;">Movie moment</div>
-            <div class="about-link" style="float: left;margin-right: 20px;clear: right;text-decoration: underline;cursor: pointer;">About</div>
-          </div>
-          <div style="height: 10px;clear: both;"></div>      
-        `);
-
-
-
-      });
+      $("body").width($(document).width());
+      $("body").height($(document).height());
     </script>
-      
   </body>
 </html>
